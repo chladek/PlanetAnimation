@@ -18,3 +18,9 @@
     width: 65%;
   }
 }
+
+#planet,
+#stars > *,
+#car {
+  opacity: 0;
+}

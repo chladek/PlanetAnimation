@@ -1,7 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import './App.css';
 import { ReactComponent as Scene } from './scene.svg';
-import { gsap, MotionPathPlugin } from 'gsap/all';
+import gsap from 'gsap';
+import { MotionPathPlugin } from 'gsap/all';
 
 function App() {
   const wrapper = useRef(null);
@@ -13,10 +14,11 @@ function App() {
     const car = elements.getElementById('car');
 
     gsap.registerPlugin(MotionPathPlugin);
-
     gsap.set([planet, ...stars.children, car], { autoAlpha: 0 });
 
-    const t1 = gsap.timeline({ defaults: { ease: 'power3.inOut' } });
+    const t1 = gsap.timeline({
+      defaults: { ease: 'power3.inOut' }
+    });
 
     t1.to([planet, car], { duration: 2, autoAlpha: 1 })
       .to(stars.children, {
