@@ -20,20 +20,21 @@ function App() {
       defaults: { ease: 'power3.inOut' }
     });
 
-    t1.to([planet, car], { duration: 2, autoAlpha: 1 })
+    t1.to(planet, { duration: 2, autoAlpha: 1 })
+      .to(car, { duration: 1, autoAlpha: 1 }, 1.5)
       .to(stars.children, {
-        duration: 1.5,
+        duration: 1.2,
         autoAlpha: 1,
-        stagger: 0.12
+        stagger: 0.1
       })
       .to(car, {
         duration: 1,
         y: '+=20',
-        x: '+=55',
+        x: '+=60',
         ease: 'Power1.easeIn'
       })
       .to(car, {
-        duration: 1.2,
+        duration: 3,
         scale: 0,
         motionPath: {
           path: '#CarPath',
